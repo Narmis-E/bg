@@ -1,7 +1,7 @@
 <?php
 
-$site_title = "Photographs of Roadside America";
-$site_desc = "by John Margolies";
+$site_title = "My Wallpapers";
+$site_desc = "- Narmis";
 $site_style = "style.css";
 $img_folder = "img/john-margolies";
 $allowed_types = ["gif","jpg","jpeg","png","webp"];
