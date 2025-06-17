@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="bg.ico">
   <meta name="viewport" content="width=device-width">     
-  <title>My Wallpapers</title>
-  <meta name="description" content="- Narmis">
-  <meta property="og:title" content="My Wallpapers">
-  <meta property="og:description" content="- Narmis">
+  <title>Wallpapers by narmis</title>
+  <meta name="description" content="- by narmis">
+  <meta property="og:title" content="my wallpapers">
+  <meta property="og:description" content="- by narmis">
   <meta name="twitter:card" content="summary">
   <style type="text/css">
     html {
@@ -77,7 +77,6 @@ img {
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumbsize), 1fr));
   grid-gap: calc(var(--margin) * 1.33) var(--margin);
-  padding-top: calc(var(--margin) * 2);
 }
 
 .grid figure {  
@@ -101,17 +100,16 @@ img {
 .grid a::before {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-top: 70%;
 }
 
 .grid figcaption {
   font-size: 0.85em;
-  margin-top: calc(var(--margin) / 2);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .grid figure a:focus {
@@ -404,7 +402,7 @@ a.close:hover::after,
 </head>
 <body>
   <main>
-    <h1>My Wallpapers <span>- Narmis</span></h1>
+    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
     <input type="radio" name="size" id="x-large">
     <label for="x-large">XL</label>
     <input type="radio" name="size" id="large">

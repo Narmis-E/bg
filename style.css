@@ -65,7 +65,6 @@ img {
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumbsize), 1fr));
   grid-gap: calc(var(--margin) * 1.33) var(--margin);
-  padding-top: calc(var(--margin) * 2);
 }
 
 .grid figure {  
@@ -89,17 +88,16 @@ img {
 .grid a::before {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-top: 70%;
 }
 
 .grid figcaption {
   font-size: 0.85em;
-  margin-top: calc(var(--margin) / 2);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .grid figure a:focus {

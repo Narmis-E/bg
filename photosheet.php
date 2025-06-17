@@ -1,7 +1,7 @@
 <?php
 
-$site_title = "My Wallpapers";
-$site_desc = "- Narmis";
+$site_title = "my wallpapers";
+$site_desc = "- by narmis";
 $site_style = "style.css";
 $img_folder = "img/walls/";
 $allowed_types = ["gif","jpg","jpeg","png","webp"];
@@ -66,7 +66,7 @@ for($x = 0; $x < $totimg; $x++) {
   <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="bg.ico">
   <meta name="viewport" content="width=device-width">     
-  <title><?php echo $site_title; ?></title>
+  <title>Wallpapers by narmis</title>
   <meta name="description" content="<?php echo $site_desc; ?>">
   <meta property="og:title" content="<?php echo $site_title; ?>">
   <meta property="og:description" content="<?php echo $site_desc; ?>">
@@ -77,7 +77,7 @@ for($x = 0; $x < $totimg; $x++) {
 </head>
 <body>
   <main>
-    <h1><?php echo $site_title; ?> <span><?php echo $site_desc; ?></span></h1>
+    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
     <input type="radio" name="size" id="x-large">
     <label for="x-large">XL</label>
     <input type="radio" name="size" id="large">
