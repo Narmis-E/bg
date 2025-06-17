@@ -3,7 +3,7 @@
 $site_title = "My Wallpapers";
 $site_desc = "- Narmis";
 $site_style = "style.css";
-$img_folder = "img/john-margolies";
+$img_folder = "img/walls/";
 $allowed_types = ["gif","jpg","jpeg","png","webp"];
 
 function create_slug($string) {
