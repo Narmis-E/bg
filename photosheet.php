@@ -64,6 +64,7 @@ for($x = 0; $x < $totimg; $x++) {
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="bg.ico">
   <meta name="viewport" content="width=device-width">     
   <title><?php echo $site_title; ?></title>
   <meta name="description" content="<?php echo $site_desc; ?>">
