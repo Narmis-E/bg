@@ -96,7 +96,7 @@ img {
 .grid a::before {
   content: "";
   display: block;
-  padding-top: 70%;
+  padding-top: 63%;
 }
 
 .grid figcaption {
