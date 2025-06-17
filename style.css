@@ -29,6 +29,19 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.top-bar {
+  background-color: #181616;
+  width: 100%;
+  padding: 0.7em 0.7em 0.7em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--margin);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 footer {
   position: sticky;
   top: 100vh;
@@ -174,17 +187,17 @@ input:checked + label {
   }
 }
 
-input#small:checked ~ .grid {
+body:has(input#small:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) / 1.5), 1fr));
   grid-gap: var(--margin);
 }
 
-input#large:checked ~ .grid {
+body:has(input#large:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 2), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }
 
-input#x-large:checked ~ .grid {
+body:has(input#x-large:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 3), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }

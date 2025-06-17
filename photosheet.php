@@ -76,16 +76,20 @@ for($x = 0; $x < $totimg; $x++) {
   </style>
 </head>
 <body>
+  <div class="top-bar">
+    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
+    <div class="size-controls">
+      <input type="radio" name="size" id="x-large">
+      <label for="x-large">XL</label>
+      <input type="radio" name="size" id="large">
+      <label for="large">L</label>
+      <input checked="" type="radio" name="size" id="medium">
+      <label for="medium">M</label>
+      <input type="radio" name="size" id="small">
+      <label for="small">S</label>
+    </div>
+  </div>
   <main>
-    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
-    <input type="radio" name="size" id="x-large">
-    <label for="x-large">XL</label>
-    <input type="radio" name="size" id="large">
-    <label for="large">L</label>
-    <input checked type="radio" name="size" id="medium">
-    <label for="medium">M</label>
-    <input type="radio" name="size" id="small">
-    <label for="small">S</label>
     <div class="grid">
       <?php echo $grid; ?>
     </div>
