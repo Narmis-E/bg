@@ -69,7 +69,7 @@ for($x = 0; $x < $totimg; $x++) {
   <title>Wallpapers by narmis</title>
   <meta name="description" content="<?php echo $site_desc; ?>">
   <meta property="og:title" content="<?php echo $site_title; ?>">
-  <meta property="og:image" content="bg.ico">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/109248529?v=4">
   <meta property="og:description" content="<?php echo $site_desc; ?>">
   <meta name="twitter:card" content="summary">
   <style type="text/css">
