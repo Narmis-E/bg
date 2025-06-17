@@ -81,59 +81,6 @@ for($x = 0; $x < $totimg; $x++) {
   <meta name="twitter:card" content="summary">
   <style type="text/css">
     <?php echo file_get_contents($site_style); ?>
-    
-    /* GitHub source button styles */
-    .github-source {
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1001;
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    
-    .lightbox figure:target .github-source {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .github-source:hover {
-      background: rgba(0, 0, 0, 0.9);
-      transform: scale(1.1);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .github-source svg {
-      width: 18px;
-      height: 18px;
-    }
-    
-    /* Adjust for mobile */
-    @media (max-width: 768px) {
-      .github-source {
-        top: 70px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-      }
-      
-      .github-source svg {
-        width: 16px;
-        height: 16px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -163,6 +110,23 @@ for($x = 0; $x < $totimg; $x++) {
     <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/">Gallery</a> last updated: <?php echo date("F j, Y"); ?>
   </footer>
   <script>
+  // Get all lightbox figures for navigation
+  const lightboxFigures = Array.from(document.querySelectorAll('.lightbox figure'));
+  
+  function getCurrentImageIndex() {
+    return lightboxFigures.findIndex(figure => 
+      figure.id === window.location.hash.substring(1)
+    );
+  }
+  
+  function navigateToImage(index) {
+    if (index >= 0 && index < lightboxFigures.length) {
+      const targetFigure = lightboxFigures[index];
+      window.location.hash = '#' + targetFigure.id;
+      targetFigure.focus();
+    }
+  }
+  
   // show lightbox
   document.addEventListener('click', function(event) {
     if (!event.target.matches('.open')) return;
@@ -183,12 +147,37 @@ for($x = 0; $x < $totimg; $x++) {
     document.querySelector('body').classList.remove('fixed')
   }, false);
 
-  // esc key to close
+  // Enhanced keyboard navigation
   document.addEventListener(
     "keydown", (e) => {
+      const currentIndex = getCurrentImageIndex();
+      
+      // ESC key to close
       if (e.keyCode == 27) {
-        document.activeElement.querySelector('.close').click();
+        const activeElement = document.activeElement;
+        if (activeElement && activeElement.classList.contains('lightbox')) {
+          activeElement.querySelector('.close').click();
+        } else {
+          document.querySelector('.lightbox figure:target .close')?.click();
+        }
         document.querySelector('body').classList.remove('fixed');
+      }
+      
+      // Only handle arrow keys and tab when in lightbox mode
+      if (currentIndex === -1) return;
+      
+      // Left arrow or Shift+Tab - previous image
+      if ((e.keyCode == 37) || (e.keyCode == 9 && e.shiftKey)) {
+        e.preventDefault();
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : lightboxFigures.length - 1;
+        navigateToImage(prevIndex);
+      }
+      
+      // Right arrow or Tab - next image
+      else if ((e.keyCode == 39) || (e.keyCode == 9 && !e.shiftKey)) {
+        e.preventDefault();
+        const nextIndex = currentIndex < lightboxFigures.length - 1 ? currentIndex + 1 : 0;
+        navigateToImage(nextIndex);
       }
     }, false);
 

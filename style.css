@@ -402,3 +402,55 @@ a.close:hover::after,
   transform: translateX(-50%);
   opacity: 0.25;
 }
+
+.github-source {
+      position: absolute;
+      top: 60px;
+      right: 7px;
+      width: 40px;
+      height: 40px;
+      background: #121212;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1001;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    
+    .lightbox figure:target .github-source,
+    .lightbox figure:focus .github-source {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .github-source:hover {
+      background: #1E1E1E;
+      transform: scale(1.1);
+    }
+    
+    .github-source svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Adjust for mobile */
+    @media (max-width: 768px) {
+      .github-source {
+        top: 70px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+      }
+      
+      .github-source svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
