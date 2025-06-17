@@ -95,7 +95,7 @@ for($x = 0; $x < $totimg; $x++) {
     </div> 
   </main>
   <footer>
-    <a target="_blank" rel="noopener" href="http://github.com/narmis-e/bg">Gallery</a> last updated: <?php echo date("F j, Y"); ?>
+    <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/">Gallery</a> last updated: <?php echo date("F j, Y"); ?>
   </footer>
   <script>
   // show lightbox
