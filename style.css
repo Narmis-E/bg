@@ -3,8 +3,8 @@ html {
   --textcolor: #eee;
   --backcolor: #0e0e0f;
 
-  --margin: calc(0.8em + 1vw);
-  --thumbsize: 156px; /* size M */
+  --margin: calc(0.5em + 1vw);
+  --thumbsize: 200px; /* size M */
   --slide-transition: auto; /* smooth or auto */
 }
 
@@ -175,17 +175,17 @@ input:checked + label {
 }
 
 input#small:checked ~ .grid {
-  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) / 2), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) / 1.5), 1fr));
   grid-gap: var(--margin);
 }
 
 input#large:checked ~ .grid {
-  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 1.5), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 2), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }
 
 input#x-large:checked ~ .grid {
-  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 2), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 3), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }
 
