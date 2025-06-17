@@ -41,6 +41,19 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.top-bar {
+  background-color: #181616;
+  width: 100%;
+  padding: 0.7em 0.7em 0.7em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--margin);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 footer {
   position: sticky;
   top: 100vh;
@@ -186,17 +199,17 @@ input:checked + label {
   }
 }
 
-input#small:checked ~ .grid {
+body:has(input#small:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) / 1.5), 1fr));
   grid-gap: var(--margin);
 }
 
-input#large:checked ~ .grid {
+body:has(input#large:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 2), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }
 
-input#x-large:checked ~ .grid {
+body:has(input#x-large:checked) .grid {
   grid-template-columns: repeat(auto-fill, minmax(calc(var(--thumbsize) * 3), 1fr));
   grid-gap: calc(var(--margin) * 1.5);
 }
@@ -409,16 +422,20 @@ a.close:hover::after,
   </style>
 </head>
 <body>
+  <div class="top-bar">
+    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
+    <div class="size-controls">
+      <input type="radio" name="size" id="x-large">
+      <label for="x-large">XL</label>
+      <input type="radio" name="size" id="large">
+      <label for="large">L</label>
+      <input checked="" type="radio" name="size" id="medium">
+      <label for="medium">M</label>
+      <input type="radio" name="size" id="small">
+      <label for="small">S</label>
+    </div>
+  </div>
   <main>
-    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
-    <input type="radio" name="size" id="x-large">
-    <label for="x-large">XL</label>
-    <input type="radio" name="size" id="large">
-    <label for="large">L</label>
-    <input checked type="radio" name="size" id="medium">
-    <label for="medium">M</label>
-    <input type="radio" name="size" id="small">
-    <label for="small">S</label>
     <div class="grid">
       
   <figure class="landscape">
