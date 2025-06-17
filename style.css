@@ -1,7 +1,7 @@
 html {
   --textsize: 16px;
   --textcolor: #eee;
-  --backcolor: #0e0e0f;
+  --backcolor: #121212;
 
   --margin: calc(0.5em + 1vw);
   --thumbsize: 200px; /* size M */
@@ -30,7 +30,7 @@ body {
 }
 
 .top-bar {
-  background-color: #181616;
+  background-color: #1E1E1E;
   width: 100%;
   padding: 0.7em 0.7em 0.7em 1em;
   display: flex;
