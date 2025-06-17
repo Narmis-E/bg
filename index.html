@@ -135,14 +135,12 @@ img {
 
 .grid figure a:focus {
   outline: 0 none;
-  border-radius: 1px;
-  box-shadow: 0 0 0 4px;
+  box-shadow: 0 0 0 4px #2D2D2D;
   background: currentColor;
 }
 
 .grid figure a:target {
-  outline: 1px solid;
-  border-radius: 4px;
+  outline: 1px solid #2D2D2D;
 }
 
 .grid figure a:hover + figcaption,
@@ -179,7 +177,6 @@ input:focus + label {
 input:focus + label,
 input:checked + label:hover {
   outline: 1px solid;
-  border-radius: 1px;
 }
 
 input:checked + label {
@@ -413,7 +410,6 @@ a.close:hover::after,
   animation: spin 0.8s infinite linear;
   border: 1px solid;
   border-right-color: transparent;
-  border-radius: 50%;
   display: block;
   position: absolute;
   transform: translateX(-50%);
