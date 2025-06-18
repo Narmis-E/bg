@@ -81,7 +81,7 @@ for($x = 0; $x < $totimg; $x++) {
 </head>
 <body>
   <div class="top-bar">
-    <h1>wallpapers <span class="inline-logo">by  <a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;" src="bg.ico" alt="narmis"></a></span></h1>
+    <h1>wallpapers <span class="inline-logo">by &#8201;<a href="https://github.com/Narmis-E"><img style="height:1em;vertical-align:middle;border-radius:3px;animation:spin 5s infinite linear;" src="bg.ico" alt="narmis"></a></span></h1>
     <div class="size-controls">
       <input type="radio" name="size" id="x-large">
       <label for="x-large">XL</label>
