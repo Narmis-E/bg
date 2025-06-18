@@ -3,9 +3,10 @@
 $site_title = "Wallpapers";
 $site_desc = "by narmis";
 $site_style = "style.css";
-$img_folder = "img/walls/";
+$img_folder = "img/compressed/walls";
+$full_img_folder = "img/fulls/walls";
 $allowed_types = ["gif","jpg","jpeg","png","webp"];
-$github_base_url = "https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/";
+$github_base_url = "https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/fulls/walls/";
 
 function create_slug($string) {
   $string = strtolower($string);
@@ -26,6 +27,12 @@ while($img_file = readdir($dimg)) {
   {$a_img[] = $img_file;} 
 }
 
+$dimg_full = opendir($full_img_folder);
+while($img_file = readdir($dimg_full)) {
+  if(in_array(strtolower(@end(explode('.',$img_file))),$allowed_types))
+  {$a_img_full[] = $img_file;} 
+}
+
 if(is_array($a_img)) sort($a_img, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
 
 $totimg = count($a_img);
@@ -34,7 +41,7 @@ for($x = 0; $x < $totimg; $x++) {
   
   $file_name = pathinfo($a_img[$x], PATHINFO_FILENAME); 
   $file_slug = create_slug($file_name);
-  $github_url = $github_base_url . rawurlencode($a_img[$x]);
+  $github_url = $github_base_url . rawurlencode($a_img_full[$x]);
  
   $size = getimagesize($img_folder.'/'.$a_img[$x]);
   $width = $size[0];
@@ -103,7 +110,7 @@ for($x = 0; $x < $totimg; $x++) {
     </div> 
   </main>
   <footer>
-    <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/">Gallery</a> last updated: <?php echo date("F j, Y"); ?>
+    <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/fulls/walls/">Gallery</a> last updated: <?php echo date("F j, Y"); ?>
   </footer>
   <script>
   // Get all lightbox figures for navigation
