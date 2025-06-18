@@ -403,54 +403,33 @@ a.close:hover::after,
   opacity: 0.25;
 }
 
-.github-source {
+.download-source {
       position: absolute;
       top: 60px;
-      right: 7px;
+      right: 30px;
       width: 40px;
       height: 40px;
-      background: #121212;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
+      color: transparent;
+      user-select: none;
+      width: 10vmax;
+      height: 10vmax;
+      z-index: 21;
       text-decoration: none;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1001;
-      opacity: 0;
-      transform: scale(0.8);
+      display: block;
+      font-size: 2.4em;
+      font-weight: 200;
+      line-height: 1;
+      padding: calc(var(--margin) / 4) calc(var(--margin) / 2) 10vmax 10vmax;
+      pointer-events: auto;
+    }
+
+    .download-source:hover,
+    .lightbox figure:target .download-source,
+    .lightbox figure:focus .download-source {
+      color: var(--textcolor);
+      opacity: 0.3;
     }
     
-    .lightbox figure:target .github-source,
-    .lightbox figure:focus .github-source {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .github-source:hover {
-      background: #1E1E1E;
-      transform: scale(1.1);
-    }
-    
-    .github-source svg {
-      width: 18px;
-      height: 18px;
-    }
-    
-    /* Adjust for mobile */
-    @media (max-width: 768px) {
-      .github-source {
-        top: 70px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-      }
-      
-      .github-source svg {
-        width: 16px;
-        height: 16px;
-      }
+    .download-source:hover {
+      opacity: 1 !important;
     }

@@ -416,56 +416,35 @@ a.close:hover::after,
   opacity: 0.25;
 }
 
-.github-source {
+.download-source {
       position: absolute;
       top: 60px;
-      right: 7px;
+      right: 30px;
       width: 40px;
       height: 40px;
-      background: #121212;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
+      color: transparent;
+      user-select: none;
+      width: 10vmax;
+      height: 10vmax;
+      z-index: 21;
       text-decoration: none;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1001;
-      opacity: 0;
-      transform: scale(0.8);
+      display: block;
+      font-size: 2.4em;
+      font-weight: 200;
+      line-height: 1;
+      padding: calc(var(--margin) / 4) calc(var(--margin) / 2) 10vmax 10vmax;
+      pointer-events: auto;
+    }
+
+    .download-source:hover,
+    .lightbox figure:target .download-source,
+    .lightbox figure:focus .download-source {
+      color: var(--textcolor);
+      opacity: 0.3;
     }
     
-    .lightbox figure:target .github-source,
-    .lightbox figure:focus .github-source {
-      opacity: 1;
-      transform: scale(1);
-    }
-    
-    .github-source:hover {
-      background: #1E1E1E;
-      transform: scale(1.1);
-    }
-    
-    .github-source svg {
-      width: 18px;
-      height: 18px;
-    }
-    
-    /* Adjust for mobile */
-    @media (max-width: 768px) {
-      .github-source {
-        top: 70px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-      }
-      
-      .github-source svg {
-        width: 16px;
-        height: 16px;
-      }
+    .download-source:hover {
+      opacity: 1 !important;
     }
   </style>
 </head>
@@ -528,11 +507,7 @@ a.close:hover::after,
       <img loading="lazy" width="3840" height="2160" src="img/walls//all of me (alt).png" alt="all of me (alt)">
     </a>
     <a tabindex="-1" href="#all-of-me-alt-thumb" class="close">Close</a>
-    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/all+of+me+%28alt%29.png" target="_blank" rel="noopener" class="github-source" title="View source on GitHub">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
+    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/all%20of%20me%20%28alt%29.png" target="_blank" rel="noopener" class="download-source" title="Download image" download>⬇</a>
   </figure>
   
   <figure tabindex="0" id="all-of-me" class="landscape">
@@ -540,11 +515,7 @@ a.close:hover::after,
       <img loading="lazy" width="3840" height="2160" src="img/walls//all of me.png" alt="all of me">
     </a>
     <a tabindex="-1" href="#all-of-me-thumb" class="close">Close</a>
-    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/all+of+me.png" target="_blank" rel="noopener" class="github-source" title="View source on GitHub">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
+    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/all%20of%20me.png" target="_blank" rel="noopener" class="download-source" title="Download image" download>⬇</a>
   </figure>
   
   <figure tabindex="0" id="casiopea" class="landscape">
@@ -552,11 +523,7 @@ a.close:hover::after,
       <img loading="lazy" width="3840" height="2160" src="img/walls//casiopea.png" alt="casiopea">
     </a>
     <a tabindex="-1" href="#casiopea-thumb" class="close">Close</a>
-    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/casiopea.png" target="_blank" rel="noopener" class="github-source" title="View source on GitHub">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
+    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/casiopea.png" target="_blank" rel="noopener" class="download-source" title="Download image" download>⬇</a>
   </figure>
   
   <figure tabindex="0" id="insatiable" class="landscape">
@@ -564,11 +531,7 @@ a.close:hover::after,
       <img loading="lazy" width="3840" height="2160" src="img/walls//insatiable.png" alt="insatiable">
     </a>
     <a tabindex="-1" href="#insatiable-thumb" class="close">Close</a>
-    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/insatiable.png" target="_blank" rel="noopener" class="github-source" title="View source on GitHub">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
+    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/insatiable.png" target="_blank" rel="noopener" class="download-source" title="Download image" download>⬇</a>
   </figure>
   
   <figure tabindex="0" id="takanaka" class="landscape">
@@ -576,18 +539,14 @@ a.close:hover::after,
       <img loading="lazy" width="3840" height="2160" src="img/walls//takanaka.png" alt="takanaka">
     </a>
     <a tabindex="-1" href="#takanaka-thumb" class="close">Close</a>
-    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/takanaka.png" target="_blank" rel="noopener" class="github-source" title="View source on GitHub">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
+    <a tabindex="-1" href="https://raw.githubusercontent.com/Narmis-E/bg/refs/heads/main/img/walls/takanaka.png" target="_blank" rel="noopener" class="download-source" title="Download image" download>⬇</a>
   </figure>
      
       <div class="counter"></div>        
     </div> 
   </main>
   <footer>
-    <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/">Gallery</a> last updated: June 17, 2025  </footer>
+    <a target="_blank" rel="noopener" href="https://github.com/Narmis-E/bg/tree/main/img/">Gallery</a> last updated: June 18, 2025  </footer>
   <script>
   // Get all lightbox figures for navigation
   const lightboxFigures = Array.from(document.querySelectorAll('.lightbox figure'));
