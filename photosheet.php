@@ -33,7 +33,9 @@ while($img_file = readdir($dimg_full)) {
   {$a_img_full[] = $img_file;} 
 }
 
+// Sort both arrays to ensure consistent ordering
 if(is_array($a_img)) sort($a_img, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+if(is_array($a_img_full)) sort($a_img_full, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
 
 $totimg = count($a_img);
 
@@ -41,7 +43,25 @@ for($x = 0; $x < $totimg; $x++) {
   
   $file_name = pathinfo($a_img[$x], PATHINFO_FILENAME); 
   $file_slug = create_slug($file_name);
-  $github_url = $github_base_url . rawurlencode($a_img_full[$x]);
+  
+  // Find matching full resolution image by filename
+  $full_img_file = null;
+  $compressed_basename = pathinfo($a_img[$x], PATHINFO_FILENAME);
+  
+  foreach($a_img_full as $full_file) {
+    $full_basename = pathinfo($full_file, PATHINFO_FILENAME);
+    if($compressed_basename === $full_basename) {
+      $full_img_file = $full_file;
+      break;
+    }
+  }
+  
+  // Fallback: if no exact match found, try to find by index (old behavior)
+  if(!$full_img_file && isset($a_img_full[$x])) {
+    $full_img_file = $a_img_full[$x];
+  }
+  
+  $github_url = $github_base_url . rawurlencode($full_img_file);
  
   $size = getimagesize($img_folder.'/'.$a_img[$x]);
   $width = $size[0];
