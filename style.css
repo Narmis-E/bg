@@ -6,6 +6,8 @@ html {
   --margin: calc(0.5em + 1vw);
   --thumbsize: 200px; /* size M */
   --slide-transition: auto; /* smooth or auto */
+  background: var(--backcolor);
+  min-height: 100%;
 }
 
 * {
@@ -27,6 +29,11 @@ body {
   padding: var(--margin) var(--margin) 0;
   overscroll-behavior: contain;
   -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+}
+
+html, body, main {
+  background-color: var(--backcolor) !important;
 }
 
 .top-bar {
