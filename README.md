@@ -5,5 +5,5 @@ Wallpapers won't usually have a specific colourscheme (apart from what I'm curre
 Site: http://narmis-e.github.io/bg
 
 ## todo
-- [ ] use compressed walls (webp) and button link to high res img
+- [x] use compressed walls (webp) and button link to high res img
 - [ ] add categories for walls (e.g dir based)  
